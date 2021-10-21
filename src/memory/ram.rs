@@ -12,8 +12,6 @@ impl MMIODevice for RAM {
 		return self.cells[(address as usize) & RAM_SIZE / 4 - 1];
 	}
 	fn write(&mut self, address: u32, value: u32) {
-		println!("address {:#0x}", address);
-		println!("masked {:#0x}", (address as usize) & RAM_SIZE / 4 - 1);
 		self.cells[(address as usize) & RAM_SIZE / 4 - 1] = value;
 	}
 }
