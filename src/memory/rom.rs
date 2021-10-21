@@ -11,7 +11,9 @@ impl MMIODevice for ROMDevice {
   fn read(&self, address: u32) -> u32 {
     return self.cells[(address as usize) & ROM_SIZE - 1];
   }
-  fn write(&mut self, _: u32, _: u32) {}
+  fn write(&mut self, _: u32, _: u32) {
+    panic!("Not allowed")
+  }
 }
 
 impl ROMDevice {
